@@ -39,8 +39,8 @@ libnative_tassl_sock_wrap.so: $(LIB_TASSL_SOCK_WRAP_SOURCES) $(CPP_COMMON)/nativ
 	@echo "-->Build native tassl sock wrap lib"
 	$(CC) $(LIB_TASSL_SOCK_WRAP_CFLAGS) tassl_sock_wrap.cpp
 	$(CC) $(LIB_TASSL_SOCK_WRAP_CFLAGS) $(CPP_COMMON)/native_tassl_sock_wrap.cpp
-	#$(CC) $(LIB_TASSL_SOCK_WRAP_OBJS) native_tassl_sock_wrap.o -L./ -Wl,-Bstatic -lssl -lcrypto -Wl,-Bdynamic $(LIB_TASSL_SOCK_WRAP_LDFLAGS) -lstdc++ -o libnative_tassl_sock_wrap.so
-	$(CC) -Wl,-Bsymbolic $(LIB_TASSL_SOCK_WRAP_OBJS) native_tassl_sock_wrap.o -L./runtime_libs_linux -Wl,-Bstatic -lssl -lcrypto -Wl,-Bdynamic -pthread  -shared  -lstdc++ -o libnative_tassl_sock_wrap.so
+	$(CC) $(LIB_TASSL_SOCK_WRAP_OBJS) native_tassl_sock_wrap.o -L./ -Wl,-Bstatic -lssl -lcrypto -Wl,-Bdynamic $(LIB_TASSL_SOCK_WRAP_LDFLAGS) -lstdc++ -o libnative_tassl_sock_wrap.so
+	#$(CC) -Wl,-Bsymbolic $(LIB_TASSL_SOCK_WRAP_OBJS) native_tassl_sock_wrap.o -L./runtime_libs_linux -Wl,-Bstatic -lssl -lcrypto -Wl,-Bdynamic -pthread  -shared  -lstdc++ -o libnative_tassl_sock_wrap.so
 	
 	
 TEST_TASSL_SOCK_WRAP_LDFLAGS =-L./ -lpthread $(OPENSSL_LDFLAGS) -lstdc++
