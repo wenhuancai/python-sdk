@@ -21,7 +21,7 @@ print("set target platform = {} ,on system :{}\n".format(target_platform, platsy
 extension = Extension(
     "cython_tassl_sock_wrap",
     ["cython_tassl_sock_wrap.pyx"],
-    include_dirs=["./", include_dir, TASSL_ENV + "/include/openssl"],
+    include_dirs=["./", include_dir, TASSL_ENV + "/include"],
     extra_link_args=["-L./ -L" + TASSL_ENV],
     libraries=["tassl_sock_wrap"],
 )
